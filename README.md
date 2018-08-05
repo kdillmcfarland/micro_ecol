@@ -1,5 +1,22 @@
 # micro_ecol
-Scripts used in the analysis of amplicon microbiota data in R
+Scripts used in the analysis of amplicon microbiota data
 
-## Pairwise_adonis_all.r
-Function to run pairwise PERMANOVAs of all levels of a variable of interest across beta-diversity measures. Adapted from Pedro Martinez Arbizu (https://www.researchgate.net/post/How_can_I_do_PerMANOVA_pairwise_contrasts_in_R). Allows use of Bray-Curtis, Jaccard and UniFrac. Allows `strata` function within adonis
+## clean_repFasta_FAST.py
+
+Renames fasta sequences output from mothur from automatically generated name to OTU #
+## Pairwise_adonis
+
+Functions to run pairwise PERMANOVAs with multiple comparison (fdr) correction across all levels variables of interest across beta-diversity measures. Adapted from Pedro Martinez Arbizu (https://www.researchgate.net/post/How_can_I_do_PerMANOVA_pairwise_contrasts_in_R). 
+
+* 1 - One variable of interest. Output to console. Bray-Curtis or Jaccard only.
+* 2 - Multiple variables of interest allowed. Output saved to table. Bray-Curtis or Jaccard only.
+* All - One variable of interest. Output to console. Bray-Curtis, Jaccard, or UniFrac allowed. Stratification of model allowed with strata option.
+## pairwise_permdisp.R
+
+Permutational tests of beta-dispersion (PERMDISP) across multiple variables of interest and pairwise with TukeyHSD. Multiple variables of interest allowed. Bray-Curtis or Jaccard only.
+## R_krusk.R
+
+Automates Kruskal-Wallis test execution on OTUs of interest as determined by simper_pretty.R. See https://github.com/asteinberger9 for up to date version
+## simper_pretty.R
+
+Automates SIMAPERA execution for comparisons OTUs across variables of interest. See https://github.com/asteinberger9 for up to date version
