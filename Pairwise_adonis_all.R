@@ -1,17 +1,37 @@
-#Function to run pairwise PERMANOVAs of all levels of a variable of interest across beta-diversity measures
+"Pairwise ADONIS: Pairwise permutational ANOVA (PERMANOVA, adonis) within ONE variable of interest (ANY beta measure)
 
-#Inputs
-  #OTU.table = OTU count table with OTUs as column names and samples as rownames. No data other than OTU counts may be present within the dataframe
-  #metadata = metadata with samples as rownames and any variables of interest as columns
-  #factors = variable from metadata table that you want to test if beta-diversity varies by, input as meta$variable
-  #sim.method = Beta-diversity measure. Options are Bray-Curtis "bray", Jaccard "jaccard", weighted UniFrac "wunifrac" and unweighted UniFrac "uwunifrac"
-  #tree = taxonomic tree of OTUs to be used in creating phyloseq object for UniFrac calculation
-  #stratify = Do you want to run a PERMANOVA model using the "strata" option? TRUE or FALSE
-  #strata.factor = If strafify = TRUE, the variable from the metadata that you want to stratify by, input as meta$variable
-  #p.adjust.m = multiple comparison correction of p-values across all pairwise comparisons. Methods include all those in `p.adjust`
+Kim Dill-Mcfarland
+University of British Columbia
 
-#Example
-  #pairwise.adonis.all(OTU, meta, meta$group, "bray", NJ.tree, TRUE, meta$subject, "bonferroni")
+Copyright (C) 2018 Kim Dill-Mcfarland
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Input files:
+
+OTU.table = OTU count table with OTUs as column names and samples as rownames. No data other than OTU counts may be present within the dataframe
+metadata = metadata with samples as rownames and any variables of interest as columns
+factors = variable from metadata table that you want to test if beta-diversity varies by, input as meta$variable
+sim.method = Beta-diversity measure. Options are Bray-Curtis 'bray', Jaccard 'jaccard', weighted UniFrac 'wunifrac' and unweighted UniFrac 'uwunifrac'
+tree = taxonomic tree of OTUs to be used in creating phyloseq object for UniFrac calculation
+stratify = Do you want to run a PERMANOVA model using the 'strata' option? TRUE or FALSE
+strata.factor = If strafify = TRUE, the variable from the metadata that you want to stratify by, input as meta$variable
+p.adjust.m = multiple comparison correction of p-values across all pairwise comparisons. Methods include all those in `p.adjust`
+
+Example
+  pairwise.adonis.all(OTU, meta, meta$group, 'bray', NJ.tree, TRUE, meta$subject, 'bonferroni')
+"
 
 pairwise.adonis.all <- function(OTU.table, metadata, factors, sim.method, tree, stratify, strata.factor, p.adjust.m)
 {require(vegan)
