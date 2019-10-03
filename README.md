@@ -9,10 +9,10 @@ Renames fasta sequences output from mothur from automatically generated name to 
 
 Functions to run pairwise PERMANOVAs with multiple comparison (fdr) correction across all levels variables of interest across beta-diversity measures. Adapted from Pedro Martinez Arbizu (https://www.researchgate.net/post/How_can_I_do_PerMANOVA_pairwise_contrasts_in_R). 
 
-* pairwise_adonis - Multiple variables of interest allowed. Bray-Curtis, Jaccard, or UniFrac allowed. Stratification of model allowed with strata option. Output saved to object in R environment. 
-* 1 - One variable of interest. Bray-Curtis or Jaccard only. Output to console. 
-* 2 - Multiple variables of interest allowed. Bray-Curtis or Jaccard only. Output saved to table. 
-* All - One variable of interest. Bray-Curtis, Jaccard, or UniFrac allowed. Stratification of model allowed with strata option. Output to console. 
+* Multiple variables of interest allowed. 
+* Bray-Curtis, Jaccard, or UniFrac allowed. 
+* Stratification of model allowed with strata option.
+* Output saved to object in R environment. 
 
 ## pairwise_permdisp.R
 
